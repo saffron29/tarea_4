@@ -135,14 +135,15 @@ def _pedir(url):
                     "intentarlo.")
 
 
-@mcp.tool(annotations=SOLO_LECTURA)
-def serie(codigo: str, desde: str, hasta: str) -> dict:
+@mcp.tool(annotations={"readOnlyHint": False, "openWorldHint": True})
+def serie(codigo: str, desde: str, hasta: str, guardar: bool = False) -> dict:
     """Datos de una serie del BCRP entre dos fechas, ambas incluidas, con la URL de la fuente.
 
     Las fechas dependen de la frecuencia de la serie: "2025-01" (mensual), "2025-01-15" (diaria), "2025-T1"
     (trimestral) o "2025" (anual). Por ejemplo: serie("PN01273PM", "2025-01", "2025-12"). En caso de no conocer el
     código, se debe usar antes buscar_series. Asimismo, para variaciones, promedios o valores extremos se debe usar
-    resumen en lugar de calcularlos a mano.
+    resumen en lugar de calcularlos a mano. Con guardar=True escribe además salidas/bcrp_serie_<codigo>.csv, para que
+    los gráficos usen exactamente estos datos sin copiarlos a mano.
     """
     ficha = _ficha(codigo)               # lanza un ToolError si el código no existe
     frecuencia = ficha["frecuencia"]
@@ -152,7 +153,14 @@ def serie(codigo: str, desde: str, hasta: str) -> dict:
     if not datos:
         raise ToolError(f"La serie {codigo} no tiene datos entre {desde} y {hasta}; "
                         f"hay datos desde {ficha['inicio']}.")
-    return {"codigo": codigo, "nombre": ficha["nombre"], "frecuencia": frecuencia, "datos": datos, "fuente": url}
+    resultado = {"codigo": codigo, "nombre": ficha["nombre"], "frecuencia": frecuencia, "datos": datos, "fuente": url}
+    if guardar:
+        archivo = RAIZ / "salidas" / f"bcrp_serie_{codigo}.csv"
+        archivo.parent.mkdir(exist_ok=True)
+        pd.DataFrame(datos).assign(codigo=codigo, nombre=ficha["nombre"], frecuencia=frecuencia, fuente=url).to_csv(
+            archivo, index=False, encoding="utf-8")
+        resultado["archivo"] = archivo.relative_to(RAIZ).as_posix()
+    return resultado
 
 
 # TODO 2 · resumen: reutiliza serie, de modo que las operaciones las realiza Python y no el modelo.
