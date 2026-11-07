@@ -1,6 +1,6 @@
 ---
 name: limpiando-enaho
-description: Limpia y valida los módulos 34 (sumaria) y 02 (miembros) de la ENAHO del INEI y calcula la pobreza monetaria ponderada por nivel (nacional, área urbana/rural, departamento, territorio con Lima separada, sexo y edad). Úsala cuando pidan limpiar, unir, validar o analizar la ENAHO, o calcular pobreza, población o indicadores de hogares con la ENAHO; las skills graficando-enaho, mapeando-enaho e investigando-peru la necesitan primero.
+description: Limpia y valida los módulos 34 (sumaria) y 02 (miembros) de la ENAHO del INEI y calcula la pobreza monetaria ponderada por nivel (nacional, área urbana/rural, departamento, territorio con Lima separada, sexo y edad) y la población expandida. Úsala SIEMPRE que pidan cualquier cifra de la ENAHO (pobreza, pobreza extrema, población o indicadores de hogares, de cualquier área, departamento, sexo o grupo de edad), aunque la pregunta pida solo un número: no calcules con código propio ni respondas de memoria, porque esta skill aplica los filtros, la unión y los factores de expansión validados. Las skills graficando-enaho, mapeando-enaho e investigando-peru la necesitan primero.
 argument-hint: [año]
 ---
 # Limpiar y validar la ENAHO

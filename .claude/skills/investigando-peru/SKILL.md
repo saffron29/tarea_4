@@ -1,9 +1,11 @@
 ---
 name: investigando-peru
-description: Investiga preguntas socioeconómicas del Perú que combinan series del BCRP (vía el MCP bcrp) con la pobreza de la ENAHO (vía las skills limpiando-enaho, graficando-enaho y mapeando-enaho), cruza ambas fuentes por código de departamento y redacta un informe reproducible en informes/. Úsala cuando pidan investigar, analizar o escribir un informe que relacione gasto público, inflación, actividad económica u otro indicador del BCRP con la pobreza o las desigualdades territoriales.
+description: Investiga preguntas socioeconómicas del Perú que combinan series del BCRP (vía el MCP bcrp) con la ENAHO (vía las skills limpiando-enaho, graficando-enaho y mapeando-enaho), cruza ambas fuentes por código de departamento y redacta un informe reproducible en informes/. Úsala cuando pidan investigar o escribir un informe que relacione gasto público, inflación, actividad económica u otro indicador del BCRP con la pobreza o las desigualdades territoriales, y también para cualquier cifra que combine ambas fuentes, como el gasto por habitante de un departamento (BCRP entre la población expandida de la ENAHO) o la correlación entre gasto y pobreza: su script cruzar.py ya calcula esos valores para los 26 territorios.
 argument-hint: [pregunta de investigación]
 ---
 # Investigar con el BCRP y la ENAHO
+
+Si solo piden una cifra que combine ambas fuentes (por ejemplo, el gasto regional por habitante de un departamento o una correlación), haz los pasos 2 (departamentos con guardar=True), 3 (solo limpiando-enaho) y 4 (cruzar.py) y responde con la fila o el indicador de salidas/cruce_territorios.csv o salidas/cruce_resumen.csv, sin informe.
 
 Pregunta: «$ARGUMENTS». Si está vacía, usa: ¿El gasto de los gobiernos regionales por habitante en 2024 fue mayor en los territorios con más pobreza monetaria, y cómo evolucionó ese gasto entre 2019 y 2024?
 

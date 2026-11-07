@@ -59,7 +59,7 @@ def limpiar_salidas(base: Path):
         (base / carpeta).mkdir()
 
 
-def preguntar(fila, modo, modelo, carpeta_b: Path | None, trabajo: Path):
+def preguntar(fila, modo, modelo, carpeta_b: Path | None, trabajo: Path, etiqueta: str | None = None):
     if modo == "A":
         cwd = trabajo / f"A_{fila.id}"
         shutil.rmtree(cwd, ignore_errors=True)
@@ -72,7 +72,7 @@ def preguntar(fila, modo, modelo, carpeta_b: Path | None, trabajo: Path):
                  "--mcp-config", str(cwd / ".mcp.json")]
     cmd = ["claude", "-p", INSTRUCCION + fila.pregunta, "--model", modelo, "--output-format", "stream-json",
            "--verbose", "--json-schema", json.dumps(ESQUEMA), "--no-session-persistence", *extra]
-    registro = REGISTROS / f"{modo}_{fila.id}.jsonl"
+    registro = REGISTROS / f"{etiqueta or modo}_{fila.id}.jsonl"
     t = time.time()
     with open(registro, "w", encoding="utf-8") as salida:
         proc = subprocess.run(cmd, stdout=salida, stderr=subprocess.PIPE, text=True, encoding="utf-8", cwd=cwd,
@@ -129,6 +129,7 @@ if __name__ == "__main__":
     p.add_argument("--modelo", default="sonnet")
     p.add_argument("--trabajo", required=True, help="carpeta temporal fuera del repositorio")
     p.add_argument("--salida", default=str(AQUI / "resultados.csv"))
+    p.add_argument("--etiqueta", default=None, help="nombre de la corrida (por ejemplo, B2) para no sobrescribir la oficial")
     a = p.parse_args()
     trabajo = Path(a.trabajo)
     REGISTROS.mkdir(parents=True, exist_ok=True)
@@ -140,8 +141,8 @@ if __name__ == "__main__":
     for modo in a.modos:
         for fila in preguntas.itertuples():
             print(f"[{time.strftime('%H:%M:%S')}] modo {modo} · {fila.id} ...", flush=True)
-            res = preguntar(fila, modo, a.modelo, carpeta_b, trabajo)
-            filas.append({"id": fila.id, "tipo": fila.tipo, "modo": modo, "modelo": a.modelo,
+            res = preguntar(fila, modo, a.modelo, carpeta_b, trabajo, a.etiqueta)
+            filas.append({"id": fila.id, "tipo": fila.tipo, "modo": a.etiqueta or modo, "modelo": a.modelo,
                           "pregunta": fila.pregunta, "respuesta_esperada": fila.respuesta_esperada,
                           "unidad": fila.unidad, "tolerancia": fila.tolerancia, "tipo_tolerancia": fila.tipo_tolerancia,
                           "respuesta_generada": res["valor"], "resultado": calificar(fila, res),
