@@ -14,3 +14,6 @@ salidas/*.parquet
 
 # Configuración local de Claude Code
 .claude/settings.local.json
+
+# Términos personales que oculta el exportador de conversaciones
+scripts/ocultar_local.txt

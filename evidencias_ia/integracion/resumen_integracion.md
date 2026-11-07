@@ -14,22 +14,22 @@ Pasos:
 
 1. `Skill: {"skill": "investigando-peru"}`
 2. `Bash: ls; ls informes salidas figuras mapas datos 2>&1 | head -50; cat .claude/skills/investigando-peru/plantilla_informe.md`
-3. `Write: {"file_path": "C:/Users/USER/Documents/GitHub/tarea_4/informes/plan.md", "content": "# Plan de investigación\n\n## Pregunta\n¿El gasto de los gobiernos regionales por habitante en 2024 fue mayor en los territorios con má`
+3. `Write: {"file_path": "~/Documents/GitHub/tarea_4/informes/plan.md", "content": "# Plan de investigación\n\n## Pregunta\n¿El gasto de los gobiernos regionales por habitante en 2024 fue mayor en los territorios con má`
 4. `mcp__bcrp__departamentos: {"grupo": "gastos gobiernos regionales", "anio": "2024", "medida": "millones de soles", "guardar": true}`
 5. `mcp__bcrp__departamentos: {"grupo": "gastos gobiernos locales", "anio": "2024", "medida": "millones de soles", "guardar": true}`
 6. `mcp__bcrp__serie: {"codigo": "RD16629DA", "desde": "2015", "hasta": "2025", "guardar": true}`
 7. `mcp__bcrp__serie: {"codigo": "PN38705PM", "desde": "2015-01", "hasta": "2025-12", "guardar": true}`
 8. `mcp__bcrp__resumen: {"codigo": "RD16629DA", "desde": "2019", "hasta": "2024"}`
 9. `Skill: {"skill": "limpiando-enaho", "args": "2024"}`
-10. `Bash: ls datos/966-Modulo34 datos/966-Modulo02 | head; uv run C:/Users/USER/Documents/GitHub/tarea_4/.claude/skills/limpiando-enaho/scripts/limpiar.py --anio 2024 2>&1 | tail -30; cat salidas/validacion.txt`
+10. `Bash: ls datos/966-Modulo34 datos/966-Modulo02 | head; uv run ~/Documents/GitHub/tarea_4/.claude/skills/limpiando-enaho/scripts/limpiar.py --anio 2024 2>&1 | tail -30; cat salidas/validacion.txt`
 11. `Skill: {"skill": "graficando-enaho", "args": "departamento"}`
-12. `Bash: for c in departamento area; do uv run C:/Users/USER/Documents/GitHub/tarea_4/.claude/skills/graficando-enaho/scripts/graficar.py --por $c 2>&1 | tail -8; done`
+12. `Bash: for c in departamento area; do uv run ~/Documents/GitHub/tarea_4/.claude/skills/graficando-enaho/scripts/graficar.py --por $c 2>&1 | tail -8; done`
 13. `Skill: {"skill": "mapeando-enaho"}`
-14. `Bash: uv run C:/Users/USER/Documents/GitHub/tarea_4/.claude/skills/graficando-enaho/scripts/graficar.py --por departamento 2>&1 | tail -8; uv run C:/Users/USER/Documents/GitHub/tarea_4/.claude/skills/graficando-enaho/scripts/g`
-15. `Bash: ls figuras mapas salidas; head -5 salidas/comparacion_mapa.csv; uv run C:/Users/USER/Documents/GitHub/tarea_4/.claude/skills/investigando-peru/scripts/cruzar.py --anio 2024 2>&1 | tail -40; uv run C:/Users/USER/Documents`
+14. `Bash: uv run ~/Documents/GitHub/tarea_4/.claude/skills/graficando-enaho/scripts/graficar.py --por departamento 2>&1 | tail -8; uv run ~/Documents/GitHub/tarea_4/.claude/skills/graficando-enaho/scripts/g`
+15. `Bash: ls figuras mapas salidas; head -5 salidas/comparacion_mapa.csv; uv run ~/Documents/GitHub/tarea_4/.claude/skills/investigando-peru/scripts/cruzar.py --anio 2024 2>&1 | tail -40; uv run ~/Documents`
 16. `Bash: cat salidas/cruce_resumen.csv; head -3 salidas/cruce_territorios.csv; grep -c True salidas/comparacion_mapa.csv; cat salidas/bcrp_resumen_RD16629DA.csv; grep -E "nacional|Nacional" salidas/indicadores.csv | head -3; sed `
-17. `Read: {"file_path": "C:/Users/USER/Documents/GitHub/tarea_4/figuras/cruce_gasto_pobreza.png"}`
-18. `Write: {"file_path": "C:/Users/USER/Documents/GitHub/tarea_4/informes/informe_final.md", "content": "# El gasto regional por habitante de 2024 no fue mayor donde hay más pobreza, aunque el gasto total creció cerca de 35% real d`
+17. `Read: {"file_path": "~/Documents/GitHub/tarea_4/figuras/cruce_gasto_pobreza.png"}`
+18. `Write: {"file_path": "~/Documents/GitHub/tarea_4/informes/informe_final.md", "content": "# El gasto regional por habitante de 2024 no fue mayor donde hay más pobreza, aunque el gasto total creció cerca de 35% real d`
 
 Respuesta final:
 

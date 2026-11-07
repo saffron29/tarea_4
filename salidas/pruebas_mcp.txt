@@ -1,7 +1,7 @@
 ============================= test session starts =============================
-platform win32 -- Python 3.14.8, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\USER\Documents\GitHub\tarea_4\.venv\Scripts\python.exe
+platform win32 -- Python 3.14.8, pytest-9.2.0, pluggy-1.7.0 -- ~\Documents\GitHub\tarea_4\.venv\Scripts\python.exe
 cachedir: .pytest_cache
-rootdir: C:\Users\USER\Documents\GitHub\tarea_4
+rootdir: ~\Documents\GitHub\tarea_4
 configfile: pyproject.toml
 testpaths: mcp
 plugins: anyio-4.16.0, platformdirs-4.14.5
