@@ -86,7 +86,7 @@ def preguntar(fila, modo, modelo, carpeta_b: Path | None, trabajo: Path):
             continue
         if e.get("type") == "assistant":
             for c in e["message"]["content"]:
-                if c.get("type") == "tool_use":
+                if c.get("type") == "tool_use" and c["name"] != "StructuredOutput":   # formato de salida, no herramienta
                     nombre = c["name"]
                     if nombre == "Skill":
                         nombre = f"Skill:{c['input'].get('skill', '?')}"

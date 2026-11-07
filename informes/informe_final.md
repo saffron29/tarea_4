@@ -81,8 +81,11 @@ Herramientas MCP `bcrp`: `departamentos` (gastos gobiernos regionales y locales,
 
 ## 8. Verificación manual
 
-| Afirmación | Valor del informe | Cómo verificarla | Resultado | Diferencia |
+La presente sección fue completada por el autor después de la ejecución del agente, siendo que las comprobaciones se realizaron el 6 de noviembre de 2026 por un camino distinto al de las herramientas del proyecto: la consulta directa de las tablas publicadas en el portal BCRPData, el cálculo manual de la variación con esos mismos valores y la revisión del archivo de referencia de la Sesión 16 del repositorio del curso. Debe tenerse en cuenta que el portal del BCRP presenta los montos anuales redondeados a enteros, por lo que la diferencia de medio millón de soles en el gasto total corresponde únicamente al redondeo de la publicación.
+
+| Afirmación | Valor del informe | Cómo se verificó | Resultado | Diferencia |
 |---|---:|---|---|---|
-| Gasto regional total 2024 | 56,575.5 millones de soles | Consultar RD16629DA, 2024, en el portal BCRPData | pendiente de verificación manual | pendiente de verificación manual |
-| Variación nominal 2019-2024 | 67.61% | Calcular (56,575.5 / 33,755.1 − 1) × 100 con los valores de RD16629DA | pendiente de verificación manual | pendiente de verificación manual |
-| Pobreza nacional 2024 | 27.58% | Comparar con la cifra publicada por el INEI (27.6%) | pendiente de verificación manual | pendiente de verificación manual |
+| Gasto regional total 2024 (RD16629DA) | 56,575.5 millones de soles | Tabla anual de RD16629DA en BCRPData (2019-2024) | 56,576 millones; coincide | 0.5 millones, por el redondeo a enteros del portal |
+| Variación nominal 2019-2024 (RD16629DA) | 67.61% | Cálculo manual con los valores del portal: 56,576 / 33,755 − 1 | 0.67608, es decir 67.61%; coincide | Ninguna al segundo decimal |
+| Gasto regional de Lima Metropolitana 2024 (RD16628DA) | 115.7 millones de soles | Tabla anual de RD16628DA en BCRPData (2024) | 116 millones; coincide | 0.3 millones, por el redondeo a enteros del portal |
+| Pobreza monetaria de Cajamarca 2024 (ENAHO) | 45.0% | Archivo referencias/pobreza_departamento_2024.csv de la Sesión 16 (d2cml-ai/Data-Science-Python) | 45.0%; coincide | Ninguna |
