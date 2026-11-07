@@ -7,7 +7,8 @@
 - Pocas viñetas: solo en las tablas y en la lista de archivos de reproducibilidad.
 - Porcentajes sin espacio (27.6%), punto decimal, miles con coma (56,575.5).
 - Cada cifra lleva su origen entre paréntesis la primera vez que aparece: la serie del BCRP con su periodo (RD16629DA, 2024) o el archivo de salidas/ (salidas/cruce_resumen.csv).
-- Nada de causalidad: «se asocia», «coincide con», «no se acompaña de»; nunca «causa», «provoca» o «explica».
+- Nada de causalidad: «se asocia», «coincide con», «no se acompaña de»; nunca «causa», «provoca», «explica» ni «se explica por», tampoco para descomponer una variación (se escribe «la variación real equivale a cerca de la mitad de la nominal»).
+- Cuidar el sentido de las frases de asociación: lo que se pregunta es si donde hay más pobreza hay más gasto, por lo que se escribe «la mayor pobreza no se acompaña de mayor gasto por habitante», no al revés.
 
 ## Estructura
 

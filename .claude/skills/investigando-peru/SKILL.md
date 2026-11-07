@@ -15,7 +15,10 @@ Regla de oro: ninguna cifra la escribes tú. Cada número sale de una herramient
    - `departamentos(grupo="gastos gobiernos regionales", anio="2024", medida="millones de soles", guardar=True)` y lo mismo con `grupo="gastos gobiernos locales"` (complemento con 25 departamentos). Comprueba que `suma` coincida con `total_bcrp` y que `faltan` esté vacío.
    - `serie("RD16629DA", "2015", "2025", guardar=True)` (gasto regional total) y `serie("PN38705PM", "2015-01", "2025-12", guardar=True)` (IPC de Lima, índice dic. 2021 = 100).
    - `resumen("RD16629DA", "2019", "2024")` para la evolución nominal.
-3. **ENAHO con las skills:** limpiando-enaho (si no existe salidas/indicadores.csv o falta el nivel territorio), luego graficando-enaho con `--por departamento` y `--por area`, y mapeando-enaho.
+3. **ENAHO con las skills, invocadas con la herramienta Skill** (no corras sus scripts por tu cuenta: cada skill trae sus reglas y validaciones):
+   - Skill `limpiando-enaho` con argumento 2024 (si no existe salidas/indicadores.csv o le falta el nivel territorio).
+   - Skill `graficando-enaho` con argumento `departamento` y otra vez con `area`.
+   - Skill `mapeando-enaho`.
 4. **Cruce y gráfico del BCRP**, desde la raíz:
    - `uv run ${CLAUDE_SKILL_DIR}/scripts/cruzar.py --anio 2024` → salidas/cruce_territorios.csv, salidas/cruce_resumen.csv y figuras/cruce_gasto_pobreza.png.
    - `uv run ${CLAUDE_SKILL_DIR}/scripts/graficar_bcrp.py --codigo RD16629DA --desde 2019 --hasta 2024 --deflactor PN38705PM` → figuras/bcrp_RD16629DA.png y salidas/bcrp_resumen_RD16629DA.csv.
