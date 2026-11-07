@@ -1,0 +1,23 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.8, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\USER\Documents\GitHub\tarea_4\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\USER\Documents\GitHub\tarea_4
+configfile: pyproject.toml
+testpaths: mcp
+plugins: anyio-4.16.0, platformdirs-4.14.5
+collecting ... collected 12 items
+
+mcp/test_propias.py::test_correlacion_alinea_periodos_y_cita_fuentes PASSED [  8%]
+mcp/test_propias.py::test_correlacion_rechaza_frecuencias_distintas PASSED [ 16%]
+mcp/test_propias.py::test_departamentos_gasto_regional_separa_lima_y_cuadra_con_el_total PASSED [ 25%]
+mcp/test_propias.py::test_departamentos_gasto_local_25_y_errores_claros PASSED [ 33%]
+mcp/test_server.py::test_buscar_encuentra_el_ipc PASSED                  [ 41%]
+mcp/test_server.py::test_cuatro_herramientas_como_minimo PASSED          [ 50%]
+mcp/test_server.py::test_serie_mensual PASSED                            [ 58%]
+mcp/test_server.py::test_serie_diaria PASSED                             [ 66%]
+mcp/test_server.py::test_resumen_sin_cuentas_a_mano PASSED               [ 75%]
+mcp/test_server.py::test_codigo_inexistente_da_un_error_claro PASSED     [ 83%]
+mcp/test_server.py::test_un_recurso PASSED                               [ 91%]
+mcp/test_server.py::test_un_prompt PASSED                                [100%]
+
+============================= 12 passed in 9.72s ==============================

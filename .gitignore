@@ -1,0 +1,16 @@
+# Entorno
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Microdatos del INEI y catálogo del BCRP: pesan bastante y se descargan de sus portales
+datos/**/*.zip
+datos/**/*.dta
+datos/**/*.pdf
+datos/catalogo_bcrp.csv
+
+# Base limpia: se regenera con la skill limpiando-enaho
+salidas/*.parquet
+
+# Configuración local de Claude Code
+.claude/settings.local.json
