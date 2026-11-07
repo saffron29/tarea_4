@@ -1,0 +1,11 @@
+indicador,valor,n,descripcion,anio
+gasto_regional_pc_nacional,1640.6928,26,S/ por habitante: gasto regional total / población expandida total (26 territorios),2024
+gasto_regional_pc_pobreza_alta,2233.457,10,"S/ por habitante en los territorios con pobreza mayor al promedio nacional, sin Lima Metropolitana",2024
+gasto_regional_pc_pobreza_baja,2433.1966,15,"S/ por habitante en los territorios con pobreza menor o igual al promedio nacional, sin Lima Metropolitana",2024
+gasto_regional_pc_pobreza_alta_con_15LM,1210.1858,11,"sensibilidad: el mismo grupo incluyendo Lima Metropolitana (27.58 %, justo sobre el promedio)",2024
+pearson_regional_26,-0.1607,26,"pobreza % vs gasto regional por habitante, 26 territorios",2024
+spearman_regional_26,-0.1275,26,"correlación de rangos, 26 territorios",2024
+pearson_regional_sin_15LM,-0.1847,25,"sensibilidad: sin Lima Metropolitana, cuyo gasto regional por habitante es atípico",2024
+spearman_regional_sin_15LM,-0.1015,25,"sensibilidad, rangos",2024
+pearson_local_25,-0.4015,25,"pobreza % vs gasto local por habitante, 25 departamentos",2024
+spearman_local_25,-0.2869,25,"correlación de rangos, 25 departamentos",2024

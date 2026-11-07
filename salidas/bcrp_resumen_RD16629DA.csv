@@ -1,0 +1,6 @@
+indicador,periodo,valor,unidad,codigo,fuente
+valor_inicial,2019,33755.1161,millones de S/ corrientes,RD16629DA,https://estadisticas.bcrp.gob.pe/estadisticas/series/api/RD16629DA/json/2015/2025
+valor_final,2024,56575.5223,millones de S/ corrientes,RD16629DA,https://estadisticas.bcrp.gob.pe/estadisticas/series/api/RD16629DA/json/2015/2025
+variacion_nominal_pct,2019-2024,67.6058,%,RD16629DA,https://estadisticas.bcrp.gob.pe/estadisticas/series/api/RD16629DA/json/2015/2025
+variacion_precios_pct,2019-2024,24.2276,% (promedio anual de PN38705PM),RD16629DA,https://estadisticas.bcrp.gob.pe/estadisticas/series/api/RD16629DA/json/2015/2025
+variacion_real_pct,2019-2024,34.9183,% (deflactado con el promedio anual de PN38705PM),RD16629DA,https://estadisticas.bcrp.gob.pe/estadisticas/series/api/RD16629DA/json/2015/2025
